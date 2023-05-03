@@ -392,6 +392,7 @@ nav > div{
 #section-3{
   width: 100%;
   margin: 4rem 0;
+  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -500,4 +501,62 @@ nav > div{
 .rating{
   font-size: 16px;
   color: #FF850D;
+}
+
+/* ---------------------section-4----------------- */
+
+#section-4{
+  background: #ECECEC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+}
+.banner{
+  width: 90%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner>div{
+  border-radius: 20px;
+}
+.banner-image{
+  width: 520px;
+  height: 100%;
+  overflow: hidden;
+}
+.banner-image>img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.banner-card{
+  margin-left: -50px;
+  height: 400px;
+  width: 450px;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 5px #00000037;
+  padding: 10px;
+}
+.banner-card>h2{
+  font-size: 30px;
+  margin: .5rem 0;
+  font-weight: bolder;
+  color: #222;
+}
+.banner-card>h3{
+  color: #222;
+  font-size: 22px;
+  margin: .5rem 0;
+}
+.banner-card>button{
+  padding: 20px 25px;
+  font-weight: bold;
 }
