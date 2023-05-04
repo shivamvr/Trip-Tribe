@@ -285,11 +285,14 @@ nav > div{
   width: 90%;
   display: flex;
   justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .places-wrapper>.col{
   width: 280px;
   height: 500px;
+  margin-bottom: 1rem;
 }
 
 .place-card{
@@ -406,7 +409,7 @@ nav > div{
  display: flex;
  justify-content: center;
  align-items: center;
- flex-wrap: nowrap;
+ flex-wrap: wrap;
  width: 100%;
  margin-top: 2rem;
  margin-bottom: 1rem;
@@ -417,6 +420,7 @@ nav > div{
   overflow: hidden;
   width: 350px;
   box-shadow: 0 0 5px #00000038;
+  margin-top: 2rem;
 }
 .holiday-card:nth-child(2){
   margin: 0 2rem;
@@ -518,6 +522,7 @@ nav > div{
   display: flex;
   align-items: center;
   justify-content: center;
+  /* flex-wrap: wrap; */
 }
 .banner>div{
   border-radius: 20px;
@@ -805,4 +810,32 @@ footer{
 .footer-image>img{
   filter: invert(1);
   width: 100%;
+}
+
+/* ------------------------Responsiveness------------------- */
+
+@media only screen and (max-width: 1200px) {
+  body {
+    /* background-color: lightblue; */
+  }
+  .col-3{
+    /* flex: .9; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    flex: 1;
+    justify-content: center;
+    height: fit-content;
+    align-items: start;
+    /* background: purple; */
+    flex-direction: row;
+    padding: 0 2rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .col-3>div{
+    flex: 1;
+    min-width: 270px;
+    /* background: red; */
+  }
 }
