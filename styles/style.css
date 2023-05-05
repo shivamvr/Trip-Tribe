@@ -4,7 +4,9 @@
 }
 
 body {
-  font-family: monospace;
+  /* font-family: monospace; */
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   /* position: relative; */
 }
 button {
@@ -47,7 +49,7 @@ nav > div {
 #nav-items > div {
   margin: 0 1rem;
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
   padding-top: 5px;
   /* border: solid; */
@@ -65,7 +67,7 @@ nav > div {
   box-sizing: border-box;
   position: absolute;
   top: 46px;
-  right: -125px;
+  right: -80px;
   width: 500px;
   background: #333;
   background: linear-gradient(
@@ -110,7 +112,7 @@ nav > div {
   align-items: center;
   flex-direction: column;
   position: relative;
-  display: none;
+  /* display: none; */
 }
 #profile > img {
   margin-left: auto;
@@ -165,7 +167,7 @@ nav > div {
 
 .fat-border {
   display: none;
-  margin-top: 13px;
+  margin-top: 11px;
   padding: 0;
   height: 8px;
   width: 100%;
@@ -203,9 +205,9 @@ nav > div {
 }
 
 #section-1 > h2 {
-  font-size: 40px;
-  margin-top: 10rem;
-  font-weight: bolder;
+  font-size: 34px;
+  margin-top: 8.7rem;
+  font-weight: 600;
 }
 
 #timer-box {
@@ -217,12 +219,19 @@ nav > div {
   justify-content: space-evenly;
 }
 #timer-box > h3 {
-  /* margin-bottom: .8rem; */
-  /* border: solid; */
-  font-size: 23px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
 }
+#timer-box > h3>img {
+  width: 26px;
+  margin-right: 1rem;
+  transform: rotate(-60deg);
+}
+
 #timer > div {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 22px;
 }
 #timer > div > span {
@@ -274,6 +283,8 @@ nav > div {
   /* align-self: flex-end; */
   border-top: solid 0.2px #eeeeee62;
   margin-top: 10rem;
+  font-size: 12px;
+  letter-spacing: .5px;
   /* background: #33333393; */
   background: linear-gradient(
     135deg,
@@ -361,6 +372,7 @@ nav > div {
 }
 
 .place-card {
+  font-weight: 600;
   border-radius: 30px;
   box-shadow: 0 0 5px #0707073f;
   overflow: hidden;
@@ -435,7 +447,6 @@ nav > div {
   font-size: 15px;
 }
 .card-details > div:last-child > p {
-  /* background: red; */
   color: #999;
   font-weight: 300;
   font-size: 14px;
@@ -467,7 +478,8 @@ nav > div {
 }
 .sec-2-heading {
   margin-bottom: 3rem;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 700;
   color: #333;
 }
 #cards-carousel {
@@ -521,6 +533,9 @@ nav > div {
 .holiday-details h3 {
   font-size: 14px;
 }
+.holiday-details>div>p{
+  font-size: 14px;
+}
 
 .holiday-details > div:last-child {
   flex: 1;
@@ -543,7 +558,7 @@ nav > div {
 
 .holiday-btn {
   background: #43a1ff;
-  padding: 6px 8px;
+  padding: 8px 8px;
   font-size: 10px;
   color: #fff;
   border: none;
@@ -557,7 +572,6 @@ nav > div {
   width: 18px;
 }
 .destination {
-  /* background-color: red; */
   color: #686d6a;
   margin-top: 3px;
   display: flex;
@@ -640,7 +654,9 @@ nav > div {
 
 #section-5 > h2 {
   font-size: 24px;
+  font-weight: 700;
   margin: 2rem 0;
+  margin-bottom: 1.5rem;
 }
 
 #testimonials {
@@ -883,9 +899,6 @@ footer {
 /* ------------------------Responsiveness------------------- */
 
 @media only screen and (max-width: 1200px) {
-  body {
-    /* background-color: lightblue; */
-  }
   .places-wrapper > .col-3 {
     width: 100%;
     gap: 4rem;
@@ -905,9 +918,6 @@ footer {
 }
 
 @media only screen and (max-width: 1010px) {
-  body {
-    /* background: #3EA8FF; */
-  }
   #guides {
     padding-left: 0;
   }
@@ -922,7 +932,7 @@ footer {
   }
   #search-section {
     top: 46px;
-    right: -100px;
+    right: -80px;
     width: 400px;
   }
 }
@@ -936,6 +946,9 @@ footer {
     right: -50px;
     width: 400px;
   }
+  #guides{
+    margin-top: 11rem !important;
+  }
 }
 @media only screen and (max-width: 700px) {
   #logo {
@@ -945,14 +958,16 @@ footer {
   }
   #search {
   }
+
   nav > div {
     margin-top: 10px;
   }
   #home,
   #locations,
   #discover,
-  #sign-up {
-    display: none;
+  #sign-up ,
+  #profile{
+    display: none !important;
   }
   #menu {
     display: flex;
@@ -962,11 +977,12 @@ footer {
     margin-top: 12.3rem;
     height: auto;
   }
+  #guides{
+    margin-top: 5rem !important;
+    /* background: red; */
+  }
 }
 @media only screen and (max-width: 800px) {
-  body {
-    /* background: #3EA8FF; */
-  }
   #see-more {
     display: none;
   }
