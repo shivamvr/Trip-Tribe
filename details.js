@@ -1,3 +1,4 @@
+
 let localstorage_data = {
   package: "Holiday Package",
   trend: "most visited",
@@ -48,18 +49,15 @@ window.addEventListener("load", () => {
 });
 
 async function api_coll() {
-  let url = "https://644d0d9757f12a1d3dd6931d.mockapi.io/user";
-  try {
+  let id = localStorage.getItem('location')
+  let url = `https://rotten-writing-6104-data.onrender.com/places/${id}`;
     let res = await fetch(url);
     let details = await res.json();
     container = details;
-    appending(localstorage_data, details);
-  } catch (error) {
-    console.log(error);
-  }
+    appending(details);
 }
 
-function appending(ls_data, api_data) {
+function appending(ls_data) {
   main.innerHTML = "";
   let sign = false;
   let img = 0;
@@ -119,12 +117,12 @@ function appending(ls_data, api_data) {
 
 
   // asign value here
-  title.textContent = `${ls_data.package} : ${ls_data.name}`;
+  title.textContent = `${ls_data.package} : ${ls_data.location}`;
   let flag = false;
-  if (+ls_data.star === Math.floor(ls_data.star)) {
+  if (+ls_data.rating === Math.floor(ls_data.rating)) {
     flag = true;
   }
-  for (let index = 1; index <= Math.floor(+ls_data.star); index++) {
+  for (let index = 1; index <= Math.floor(+ls_data.rating); index++) {
     let st = document.createElement("p");
     st.innerHTML = `<i class="fa-solid fa-star"></i>`;
     star.append(st);
@@ -138,40 +136,40 @@ function appending(ls_data, api_data) {
 
   // image changing
 
-  image.setAttribute("src", ls_data.Image[img]);
+  image.setAttribute("src", ls_data.image[img]);
   setInterval(() => {
-    if (img == ls_data.Image.length) {
+    if (img == ls_data.image.length) {
       img = 0;
     }
     coursel = img;
-    image.setAttribute("src", ls_data.Image[img]);
+    image.setAttribute("src", ls_data.image[img]);
     img++;
   }, 4000);
 
   right.addEventListener("click", () => {
     if (coursel === 0) {
-      coursel = ls_data.Image.length - 1;
-      image.setAttribute("src", ls_data.Image[coursel]);
+      coursel = ls_data.image.length - 1;
+      image.setAttribute("src", ls_data.image[coursel]);
     } else if (coursel >= 0) {
       coursel--;
-      image.setAttribute("src", ls_data.Image[coursel]);
+      image.setAttribute("src", ls_data.image[coursel]);
     }
   });
 
   left.addEventListener("click", () => {
     coursel++;
-    if (coursel === ls_data.Image.length) {
+    if (coursel === ls_data.image.length) {
       coursel = 0;
     }
-    if (coursel < ls_data.Image.length) {
-      image.setAttribute("src", ls_data.Image[coursel]);
+    if (coursel < ls_data.image.length) {
+      image.setAttribute("src", ls_data.image[coursel]);
     }
   });
 
   country.textContent = `${ls_data.location} - ${ls_data.country}`;
   price.textContent = ls_data.price;
   person.textContent = `/person`;
-  duration.textContent = ls_data.duration;
+  duration.textContent = ls_data.Duration;
   trend.textContent = ls_data.trend ?? "best choice";
   about.textContent = ls_data.about;
   breakfast.innerHTML = `<i class="fa-solid fa-mug-saucer"></i> Breakfast at the Hotel`;
@@ -203,7 +201,7 @@ function appending(ls_data, api_data) {
   p1.textContent='Free cancellation';
   p2.textContent='Up to 24 hours in advance.For a full refund, you must cancel at least 24 hours before the experience/’s start time.'
 
-  hotel(ls_data.hotel); // colling hotel function
+  hotel(localstorage_data.hotel); // colling hotel function
 
 
   // append here
