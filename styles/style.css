@@ -130,7 +130,7 @@ nav > div {
 }
 .menu-wrapper {
   position: absolute;
-  top: 42px;
+  top: 44px;
   right: -25px;
   display: none;
   padding: 1rem 1rem;
@@ -971,6 +971,9 @@ footer {
   }
   #menu {
     display: flex;
+  }
+  .menu-wrapper{
+    top: 42px;
   }
   #section-1 > h2 {
     width: 300px;

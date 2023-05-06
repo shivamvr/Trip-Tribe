@@ -1,25 +1,27 @@
 
 //---------- Authentication----
-let user = localStorage.getItem('user')
+let userStatus = localStorage.getItem('status')
+ userStatus = JSON.parse(userStatus)
+
+ let user = localStorage.getItem('status') 
+ user = JSON.parse(user)
 let signUp = document.getElementById('sign-up')
 let profile = document.getElementById('profile')
-user = JSON.parse(user)
-user = {status: false}
+let username = document.querySelector('#profile > div > div:nth-child(1)')
+let signOutBtn = document.querySelector('#profile > div > div:nth-child(2)')
 
-if(user.status){
+if(userStatus && userStatus.login){
  signUp.style.display = 'none'
  profile.style.display = 'block'
+ username.innerHTML = user.name
 }else{
  profile.style.display = 'none'
 }
 
 //--------------Sign-up--------------
 signUp.onclick = ()=>{
- signUp.style.display = 'none'
- profile.style.display = 'block'
+  window.location = '/signup.html'
 }
-
-
 
 // ---------------Page-redirection-------
 
@@ -31,9 +33,9 @@ let support = document.getElementById('support')
 let menu = document.getElementById('menu')
 let menuIcon = document.getElementById('menu-icon')
 let profileWrapper = document.querySelectorAll('.menu-wrapper')[1]
-console.log(profileWrapper)
+// console.log(profileWrapper)
 let menuWrapper = document.querySelector('.menu-wrapper')
-console.log(menuWrapper)
+// console.log(menuWrapper)
 let body = document.body
 
 locations.onclick = () => {
@@ -79,4 +81,8 @@ body.onclick = ()=>{
 }
 
 
-
+signOutBtn.onclick = ()=>{
+ localStorage.setItem('user',null)
+ localStorage.setItem('status',null)
+ window.location.reload()
+}
