@@ -44,9 +44,10 @@
             <div id="search-section">
                 <input type="text" placeholder="search">
                 <div id="search-items">
-                 <a href="">Location 1</a>
-                 <a href="">Location 2</a>
-                 <a href="">Location 3</a>
+                 <p id="search-label">Suggested Locations:</p>
+                 <a onclick="goToDetail(1)" href="#">Dubai</a>
+                 <a onclick="goToDetail(3)" href="#">Bhutan</a>
+                 <a onclick="goToDetail(6)" href="#">Tokyo</a>
                 </div>
             </div>
         </div>
@@ -129,7 +130,7 @@
 
         <div class="col col-1">
          <div class="place-card">Popular places to Visit</div>
-          <div class="place-card">
+          <div onclick="goToDetail(13)" class="place-card">
             <div class="card-image">
                 <img src="images/loacation1.jpg" alt="">              
             </div>
@@ -147,7 +148,7 @@
         </div>
         
         <div class="col col-2">
-            <div class="place-card">
+            <div class="place-card"  onclick="goToDetail(14)" >
               <div class="card-image">
                   <img src="images/mystical.jpg" alt="">              
               </div>
@@ -166,7 +167,7 @@
 
         <div class="col col-3">
 
-          <div class="place-card">
+          <div class="place-card"  onclick="goToDetail(15)">
             <div class="card-image">
                 <img src="images/jesus.jpg" alt="">              
             </div>
@@ -182,7 +183,7 @@
             </div>
           </div>
 
-          <div class="place-card">
+          <div class="place-card"  onclick="goToDetail(16)">
             <div class="card-image">
                 <img src="images/Venice.jpg" alt="">              
             </div>
@@ -210,7 +211,7 @@
     <h2 class="sec-2-heading">Perfect Holiday Plan</h2>
 
     <div id="cards-carousel">
-      <div class="holiday-card">
+      <div class="holiday-card"  onclick="goToDetail(17)">
           <div class="holiday-image">
             <img src="images/holiday1png.png" alt="">
           </div>
@@ -228,7 +229,7 @@
              </div>
           </div>
       </div>
-      <div class="holiday-card">
+      <div class="holiday-card"  onclick="goToDetail(18)">
           <div class="holiday-image">
             <img src="images/holiday2png.png" alt="">
           </div>
@@ -246,7 +247,7 @@
              </div>
           </div>
       </div>
-      <div class="holiday-card">
+      <div class="holiday-card"  onclick="goToDetail(19)">
           <div class="holiday-image">
             <img src="images/holiday3.png" alt="">
           </div>
