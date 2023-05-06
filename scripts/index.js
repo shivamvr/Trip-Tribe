@@ -220,7 +220,8 @@ function mapSearchResult(data){
     searchItems.append(label)
     data.forEach((e,i) => {
      let link = document.createElement('a')
-     link.innerText = e.location
+     link.textContent = e.location
+     link.href = '#'
      link.onclick = (b) => {
         b.preventDefault()
         goToDetail(e.id)
@@ -229,4 +230,28 @@ function mapSearchResult(data){
     });
 }
 
+// --------------------Timer-Functionality---------------
 
+var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+console.log(countDownDate)
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+    var now = new Date().getTime();
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  // Time calculations for days, hours, minutes and seconds
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let hourElement = document.getElementById('hours')
+  let minutesElement = document.getElementById('minutes')
+  let secondsElement = document.getElementById('sec')
+  hourElement.innerHTML = hours+' <span> hrs</span>'
+  minutesElement.innerHTML = minutes+' <span> Min</span>'
+  secondsElement.innerHTML = seconds+' <span> Sec </span>'
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+  }
+}, 1000);

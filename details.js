@@ -195,7 +195,7 @@ function appending(ls_data) {
         button.id = "boook";
       }, 3000);
     } else {
-      alert("thank you for booking");
+      window.location = '/payment.html'
     }
   });
   p1.textContent='Free cancellation';
