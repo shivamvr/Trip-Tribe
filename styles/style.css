@@ -61,7 +61,12 @@ nav > div {
   width: 30px;
   filter: invert(1);
 }
+#search-label{
+  font-size: 12px;
+  color: #333;
+ }
 #search-section{
+  cursor: auto;
   display: none;
   padding-bottom: 10px;
   box-sizing: border-box;
@@ -957,7 +962,9 @@ footer {
     align-self: flex-start;
   }
   #search {
+    
   }
+ 
 
   nav > div {
     margin-top: 10px;

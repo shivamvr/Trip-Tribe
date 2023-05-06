@@ -86,3 +86,147 @@ signOutBtn.onclick = ()=>{
  localStorage.setItem('status',null)
  window.location.reload()
 }
+
+
+function goToDetail(id){
+ localStorage.setItem('location',id)
+ window.location = '/details.html'
+}
+
+// -------------------------Searching-functionality------------
+let searchInput = document.querySelector('#search-section > input')
+let searchItems = document.getElementById('search-items')
+searchInput.onkeyup = () =>{
+ let data = [
+    {
+        "id": 1,
+        "location": "Dubai",
+        "country": "UAE"
+    },
+    {
+        "id": 2,
+        "location": "Male",
+        "country": "Maldives"
+    },
+    {
+        "id": 3,
+        "location": "Bhutan",
+        "country": "Bhutan"
+    },
+    {
+        "id": 4,
+        "location": "Santorini",
+        "country": "Greece"
+    },
+    {
+        "id": 5,
+        "location": "Bali",
+        "country": "Indonesia"
+    },
+    {
+        "id": 6,
+        "location": "Tokyo",
+        "country": "Japan"
+    },
+    {
+        "id": 7,
+        "location": "Queenstown",
+        "country": "New Zealand"
+    },
+    {
+        "id": 8,
+        "location": "Rio de Janeiro",
+        "country": "Brazil"
+    },
+    {
+        "id": 9,
+        "location": "Kyoto",
+        "country": "Japan"
+    },
+    {
+        "id": 10,
+        "location": "Barcelona",
+        "country": "Spain"
+    },
+    {
+        "id": 11,
+        "location": "Seoul",
+        "country": "South Korea"
+    },
+    {
+        "id": 12,
+        "location": "Cape Town",
+        "country": "South Africa"
+    },
+    {
+        "id": 13,
+        "location": "Rome",
+        "country": "Italy"
+    },
+    {
+        "id": 14,
+        "location": "Machu Picchu",
+        "country": "Peru"
+    },
+    {
+        "id": 15,
+        "location": "Mizoram",
+        "country": "India"
+    },
+    {
+        "id": 16,
+        "location": "Venice",
+        "country": "Italy"
+    },
+    {
+        "id": 17,
+        "location": "Sydney",
+        "country": "Australia"
+    },
+    {
+        "id": 18,
+        "location": "Frisian Islands",
+        "country": "Netherlands"
+    },
+    {
+        "id": 19,
+        "location": "Virgin Islands",
+        "country": "United States"
+    },
+    {
+        "id": 20,
+        "location": "Beijing",
+        "country": "China"
+    }
+]
+ let term = searchInput.value.toLowerCase()
+ console.log(term)
+ let searchResults = data.filter((e)=>{
+    let lowerCaseLocation = e.location.toLowerCase()
+    let lowerCaseCountry = e.country.toLowerCase()
+    if(term.length>=3 &&( lowerCaseLocation.includes(term) || lowerCaseCountry.includes(term)) ){
+        return e
+    }
+ })
+ console.log(searchResults)
+ mapSearchResult(searchResults)
+}
+
+function mapSearchResult(data){
+    searchItems.innerHTML = ''
+    let label = document.createElement('p')
+    label.id = 'search-label'
+    label.innerText = 'Search Results:'
+    searchItems.append(label)
+    data.forEach((e,i) => {
+     let link = document.createElement('a')
+     link.innerText = e.location
+     link.onclick = (b) => {
+        b.preventDefault()
+        goToDetail(e.id)
+    }
+    searchItems.append(link)
+    });
+}
+
+
