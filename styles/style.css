@@ -110,6 +110,10 @@ nav > div {
   /* border: solid; */
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+#search-items>a:hover{
+ color: #666;
 }
 #profile {
   margin: 0;
