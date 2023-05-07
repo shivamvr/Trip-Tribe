@@ -267,9 +267,12 @@ console.log(container)
 
 let url = `https://rotten-writing-6104-data.onrender.com/places/`
 
+let locationData = []
+
 async function fetchData(url) {
       let res = await fetch(url);
       let data = await res.json();
+      locationData = data
       console.log(data)
       showData(data)
 }
@@ -277,7 +280,7 @@ async function fetchData(url) {
 fetchData(url)
 
 function showData(data){
-    // container.innerHTML = ''
+    container.innerHTML = ''
     data.forEach((e)=>{
     let element = `
     <div class="place-card"  onclick="goToDetail(${e.id})">
@@ -300,9 +303,31 @@ function showData(data){
     })
 }
 
-// showData([1,2,3])
+// -----------------------Search-functionality-----------
+
+let searchDestination = document.getElementById('des')
+let searchbtn = document.getElementById('searchall')
+console.log(searchDestination)
+
+searchbtn.onclick = ()=>{
+    let term = searchDestination.value.toLowerCase()
+    let searchResults = locationData.filter((e)=>{
+       let lowerCaseLocation = e.location.toLowerCase()
+       let lowerCaseCountry = e.country.toLowerCase()
+       if(term.length>=3 &&( lowerCaseLocation.includes(term) || lowerCaseCountry.includes(term)) ){
+           return e
+       }
+    })
+    console.log(searchResults)
+    showData(searchResults)
+}
+
+// -------------------------Filter-functionality-------------
 
 
+// let searchUrl = url+
+
+// fetchData()
 
 
 
