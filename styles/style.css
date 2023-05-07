@@ -31,6 +31,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 nav > div {
   display: flex;
@@ -202,11 +203,11 @@ nav > div {
 #section-1 {
   z-index: 1;
   color: #fff;
-  background-image: url(/images/background.jpg);
+  background-image: url(/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

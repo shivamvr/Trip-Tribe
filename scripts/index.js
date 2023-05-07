@@ -6,6 +6,8 @@ let userStatus = localStorage.getItem('status')
  let user = localStorage.getItem('status') 
  user = JSON.parse(user)
 let signUp = document.getElementById('sign-up')
+let menuSignUp = document.getElementById('menu-sign-up')
+console.log(menuSignUp)
 let profile = document.getElementById('profile')
 let username = document.querySelector('#profile > div > div:nth-child(1)')
 let signOutBtn = document.querySelector('#profile > div > div:nth-child(2)')
@@ -20,6 +22,9 @@ if(userStatus && userStatus.login){
 
 //--------------Sign-up--------------
 signUp.onclick = ()=>{
+  window.location = '/signup.html'
+}
+menuSignUp.onclick = ()=>{
   window.location = '/signup.html'
 }
 
@@ -38,9 +43,10 @@ let menuWrapper = document.querySelector('.menu-wrapper')
 // console.log(menuWrapper)
 let body = document.body
 
-locations.onclick = () => {
-    window.location = '/locations.html'
+function goToPage(page){
+    window.location = `/${page}.html`
 }
+
 about.onclick = () => {
     window.scrollTo(0, 3850);
 }

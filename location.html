@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./location.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +15,12 @@
 <body>
     <!------------------Navbar---------------->
   <nav>
-    <div id="logo">
-        Travel
+    <div id="logo" onclick="goToPage('index')" >
+        Trip tripe
         <img src="" alt="">
     </div>
     <div id="nav-items">
-        <div id="home">
+        <div id="home" onclick="goToPage('index')">
             Home
             <div class="fat-border"></div>
         </div>
@@ -27,7 +28,7 @@
             Discover
             <div class="fat-border"></div>
         </div>
-        <div id="locations">
+        <div id="locations" onclick="goToPage('location')" >
             Locations
             <div class="fat-border"></div>
         </div>
@@ -82,8 +83,14 @@
         <div id="search">
             <input type="text" name="Destination" id="des" placeholder="Enter Destination">
             <input type="date" id="date">
-            <input type="number" id="number" placeholder="Adults">
-            <button id="searchall" onclick="myFunction()">Search <i class='fa-solid fa-magnifying-glass'></i></button>
+            <select  id="package">
+                <option value="">Package</option>
+                <option value="Holiday Package">Holiday</option>
+                <option value="Adventure Package">Adventure</option>
+                <option value="Cultural Experience">Cultural </option>
+                <option value="City Break">City Break </option>
+            </select>
+            <button id="searchall" onclick="myFunction()"> <i class='fa-solid fa-magnifying-glass'></i></button>
         </div>
     </div>
 
@@ -123,38 +130,39 @@
         
     </div>
   </section>
-
+    
+  <div id="locationdetail">
+    <!-- append the seach or sort on location here -->
+</div>
 
     <div id="locationsearch">
-        <div class="loca" style="background-image: url(https://www.holidify.com/images/bgImages/MIZORAM.jpg);background-size: 100%;">
+        <div class="loca" style=" background-repeat: none;background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://www.holidify.com/images/bgImages/MIZORAM.jpg);background-size: 100%;">
             <h2>India</h2>
         </div>
-        <div class="loca" style="background-image: url(https://image.khaleejtimes.com/?uuid=b31476cc-6446-5366-91b7-948ead52f4fe&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.99994&x=0&y=0&width=1200&height=675);background-size: 100%;">
+        <div class="loca" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://image.khaleejtimes.com/?uuid=b31476cc-6446-5366-91b7-948ead52f4fe&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.99994&x=0&y=0&width=1200&height=675);background-size: 100%;">
             <h2>UAE</h2>
         </div>
-        <div class="loca" style="background-image: url(https://thefreshtoast.com/wp-content/uploads/2020/09/australiacbd-e1600627542830.jpg);background-size: 100%;">
+        <div class="loca" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://thefreshtoast.com/wp-content/uploads/2020/09/australiacbd-e1600627542830.jpg);background-size: 100%;">
             <h2>Australia</h2>
         </div>
-        <div class="loca" style="background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/9b/ce/caption.jpg?w=600&h=400&s=1);background-size: 100%;">
+        <div class="loca" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/9b/ce/caption.jpg?w=600&h=400&s=1);background-size: 100%;">
             <h2>New Zealand</h2>
         </div>
-        <div class="loca" style="background-image: url(https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/kbr6osta3bgtgayabegl);background-size: 100%;">
+        <div class="loca" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/kbr6osta3bgtgayabegl);background-size: 100%;">
             <h2>Brazil</h2>
         </div>
-        <div class="loca" style="background-image: url(https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000480/img/en/a2000480_main.jpg?20210219225240);background-size: 100%;">
+        <div class="loca" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000480/img/en/a2000480_main.jpg?20210219225240);background-size: 100%;">
             <h2>Japan</h2>
         </div>
-        <div class="loca" style="background-image: url(https://www.planetware.com/wpimages/2022/02/spain-barcelona-top-attractions-basilica-sagrada-familia.jpg);background-size: 100%;">
+        <div class="loca" style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://www.planetware.com/wpimages/2022/02/spain-barcelona-top-attractions-basilica-sagrada-familia.jpg);background-size: 100%;">
             <h2>Spain</h2>
         </div>
-        <div class="loca" style="background-image: url(https://img.onmanorama.com/content/dam/mm/en/travel/travel-news/images/2022/8/9/south-korea-tourism.jpg);background-size: 100%;">
+        <div class="loca" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(https://img.onmanorama.com/content/dam/mm/en/travel/travel-news/images/2022/8/9/south-korea-tourism.jpg);background-size: 100%;">
             <h2>South Korea</h2>
         </div>
     </div>
 
-    <div id="locationdetail">
-        <!-- append the seach or sort on location here -->
-    </div>
+   
 
   <footer>
     <div id="footer-top">
@@ -219,6 +227,8 @@
     </div>
   </footer>
 
+
  <script src="./location.js"></script>
+ <!-- <script src="./scripts/index.js"></script> -->
 </body>
 </html>

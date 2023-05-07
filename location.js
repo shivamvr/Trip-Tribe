@@ -38,8 +38,8 @@ let menuWrapper = document.querySelector('.menu-wrapper')
 // console.log(menuWrapper)
 let body = document.body
 
-locations.onclick = () => {
-    window.location = '/locations.html'
+function goToPage(page){
+    window.location = `/${page}.html`
 }
 about.onclick = () => {
     window.scrollTo(0, 3850);
@@ -232,9 +232,7 @@ function mapSearchResult(data){
 
 
 
-// div with location details
 
-let locationdet = document.getElementById("locationdetail");
 
 let maindiv = document.createElement("div");
 maindiv.setAttribute("class", "locdetail");
@@ -263,6 +261,46 @@ button.innerHTML="Book now";
 button.addEventListener("click",()=>{
     window.location.href = "./payment.html";
 })
+
+let container = document.getElementById('locationdetail')
+console.log(container)
+
+let url = `https://rotten-writing-6104-data.onrender.com/places/`
+
+async function fetchData(url) {
+      let res = await fetch(url);
+      let data = await res.json();
+      console.log(data)
+      showData(data)
+}
+
+fetchData(url)
+
+function showData(data){
+    // container.innerHTML = ''
+    data.forEach((e)=>{
+    let element = `
+    <div class="place-card"  onclick="goToDetail(${e.id})">
+    <div class="card-image">
+        <img src="${e.image[0]}" alt="">              
+    </div>
+    <div class="card-details">
+        <div>
+            <p>${e.country}</p>
+            <p>${e.rating} <span class="rating">★★★★☆</span></p>              
+        </div>
+        <div>
+            <p>${e.location}</p>              
+            <p>${e.Duration}</p>              
+        </div>             
+    </div>
+  </div>
+    `
+  container.innerHTML += element
+    })
+}
+
+// showData([1,2,3])
 
 
 
