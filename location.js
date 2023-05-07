@@ -33,9 +33,7 @@ let support = document.getElementById('support')
 let menu = document.getElementById('menu')
 let menuIcon = document.getElementById('menu-icon')
 let profileWrapper = document.querySelectorAll('.menu-wrapper')[1]
-// console.log(profileWrapper)
 let menuWrapper = document.querySelector('.menu-wrapper')
-// console.log(menuWrapper)
 let body = document.body
 
 function goToPage(page){
@@ -200,7 +198,6 @@ searchInput.onkeyup = () =>{
     }
 ]
  let term = searchInput.value.toLowerCase()
- console.log(term)
  let searchResults = data.filter((e)=>{
     let lowerCaseLocation = e.location.toLowerCase()
     let lowerCaseCountry = e.country.toLowerCase()
@@ -208,7 +205,6 @@ searchInput.onkeyup = () =>{
         return e
     }
  })
- console.log(searchResults)
  mapSearchResult(searchResults)
 }
 
@@ -263,7 +259,6 @@ button.addEventListener("click",()=>{
 })
 
 let container = document.getElementById('locationdetail')
-console.log(container)
 
 let url = `https://rotten-writing-6104-data.onrender.com/places/`
 
@@ -273,7 +268,6 @@ async function fetchData(url) {
       let res = await fetch(url);
       let data = await res.json();
       locationData = data
-      console.log(data)
       showData(data)
 }
 
@@ -307,7 +301,6 @@ function showData(data){
 
 let searchDestination = document.getElementById('des')
 let searchbtn = document.getElementById('searchall')
-console.log(searchDestination)
 
 searchbtn.onclick = ()=>{
     let term = searchDestination.value.toLowerCase()
@@ -318,14 +311,45 @@ searchbtn.onclick = ()=>{
            return e
        }
     })
-    console.log(searchResults)
     showData(searchResults)
 }
 
 // -------------------------Filter-functionality-------------
 
 
-// let searchUrl = url+
+let package =  document.getElementById('package')
+
+package.onchange = ()=>{
+ if(package.value=='') {
+    showData(locationData)
+    return
+}
+
+ let filterData = locationData.filter((e)=>{
+    if(e.package==package.value){
+        return e
+    }
+ })
+ showData(filterData)
+}
+
+let duration = document.getElementById('duration')
+duration.onchange = ()=>{
+    if(duration.value=='') {
+       showData(locationData)
+       return
+   }
+   
+let filterData = locationData.filter((e)=>{
+       if(e.Duration!=undefined){
+           let n = e.Duration.split(' ')[3]
+           if(n==duration.value){
+               return e
+           }
+       }
+    })
+    showData(filterData)
+}
 
 // fetchData()
 

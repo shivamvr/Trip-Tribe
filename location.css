@@ -363,7 +363,7 @@
     width: 89%;
   }
 
-  input,  #searchall,#package {
+  input,  #searchall,#package,#duration {
     padding:10px;
     font-style: normal;
     font-weight: normal;
