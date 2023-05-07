@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./location.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Location</title>
+</head>
+<body>
+    <!------------------Navbar---------------->
+  <nav>
+    <div id="logo">
+        Travel
+        <img src="" alt="">
+    </div>
+    <div id="nav-items">
+        <div id="home">
+            Home
+            <div class="fat-border"></div>
+        </div>
+        <div id="discover">
+            Discover
+            <div class="fat-border"></div>
+        </div>
+        <div id="locations">
+            Locations
+            <div class="fat-border"></div>
+        </div>
+        <div id="about">
+            About Us
+            <div class="fat-border"></div>
+        </div>
+        <div id="support">
+            Support
+            <div class="fat-border"></div>
+        </div>
+        <div id="search">
+             <img src="images/magnifying-glass.png" alt="">
+            <div id="search-section">
+                <input type="text" placeholder="search">
+                <div id="search-items">
+                 <p id="search-label">Suggested Locations:</p>
+                 <a onclick="goToDetail(1)" href="#">Dubai</a>
+                 <a onclick="goToDetail(3)" href="#">Bhutan</a>
+                 <a onclick="goToDetail(6)" href="#">Tokyo</a>
+                </div>
+            </div>
+        </div>
+        <div id="sign-up">Sign up</div>
+        <div id="menu">
+                <img id="menu-icon" src="images/menu.png" alt="">
+            <div class="menu-wrapper">
+               <div>Discover</div>
+               <div>Location</div>
+               <div>About</div>
+               <div>Support</div>
+               <div id="menu-sign-up">Sign up</div>
+               <div class="menu-sign-out">Sign out</div>
+            </div>
+        </div>
+        <div id="profile">
+                <img src="images/user.png" alt="">
+            <div class="menu-wrapper">
+               <div>User</div>
+               <div class="profile-sign-out">Sign out</div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="thin-border"></div>
+  </nav>
+
+  <section id="section-1">
+    <h2>FEEL THE REAL BEAUTY OF NATURE</h2>
+    <div id="timer-box">
+        <h3>Search for your destination here</h3>
+        <div id="search">
+            <input type="text" name="Destination" id="des" placeholder="Enter Destination">
+            <input type="date" id="date">
+            <input type="number" id="number" placeholder="Adults">
+            <button id="searchall" onclick="myFunction()">Search <i class='fa-solid fa-magnifying-glass'></i></button>
+        </div>
+    </div>
+
+        <div id="social-media">
+            <div ><img src="images/facebook.png" alt=""></div>
+            <div class="border-small"></div>
+            <div><img src="images/instagram.png" alt=""></div>
+            <div class="border-small"></div>
+            <div><img src="images/twitter.png" alt=""></div>
+        </div>
+        <div id="guides">
+            <div class="guide-card">
+                <div><img src="images/person1.png" alt=""></div>
+                <div>
+                    HUNDREDS OF GUIDES
+                    New High - Quality Guides
+                    Added Each week
+                </div>
+            </div>
+            <div class="guide-card">
+                <div><img src="images/person2.png" alt=""></div>
+                <div>
+                    HUNDREDS OF GUIDES
+                    New High - Quality Guides
+                    Added Each week
+                </div>
+            </div>
+
+            <div id="see-more">
+                <div>
+                    <img src="images/right-arrow.png" alt="">
+                </div>
+                <div>See more</div>
+            </div>
+
+        </div>
+        
+    </div>
+  </section>
+
+
+    <div id="locationsearch">
+        <div class="loca" style="background-image: url(https://www.holidify.com/images/bgImages/MIZORAM.jpg);background-size: 100%;">
+            <h2>India</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://image.khaleejtimes.com/?uuid=b31476cc-6446-5366-91b7-948ead52f4fe&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.99994&x=0&y=0&width=1200&height=675);background-size: 100%;">
+            <h2>UAE</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://thefreshtoast.com/wp-content/uploads/2020/09/australiacbd-e1600627542830.jpg);background-size: 100%;">
+            <h2>Australia</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/9b/ce/caption.jpg?w=600&h=400&s=1);background-size: 100%;">
+            <h2>New Zealand</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/kbr6osta3bgtgayabegl);background-size: 100%;">
+            <h2>Brazil</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000480/img/en/a2000480_main.jpg?20210219225240);background-size: 100%;">
+            <h2>Japan</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://www.planetware.com/wpimages/2022/02/spain-barcelona-top-attractions-basilica-sagrada-familia.jpg);background-size: 100%;">
+            <h2>Spain</h2>
+        </div>
+        <div class="loca" style="background-image: url(https://img.onmanorama.com/content/dam/mm/en/travel/travel-news/images/2022/8/9/south-korea-tourism.jpg);background-size: 100%;">
+            <h2>South Korea</h2>
+        </div>
+    </div>
+
+    <div id="locationdetail">
+        <!-- append the seach or sort on location here -->
+    </div>
+
+  <footer>
+    <div id="footer-top">
+       <h2>Subscribe Our Newsletter</h2>
+       <div>
+        <input type="text" placeholder="Enter your Email Id">
+        <button>Subscribe</button>
+       </div>
+    </div>
+
+    <div id="footer-middle">
+        <div class="footer-col footer-col-1">
+            <h3>TRAVELLER</h3>
+            <div>
+                <img src="images/map.png" alt="">
+                <p>Lakshmipuram road, Guntur
+                    Andhra Pradesh, India.</p>
+            </div>
+            <div>
+                <img src="images/phone-call.png" alt="">
+                <p>0863 - 222000</p>
+            </div>
+            <div>
+                <img src="images/email.png" alt="">
+                <p>Yourmailid@gmail.com</p>
+            </div>
+
+        </div>
+        <div class="footer-col">
+            <h3>MY ACCOUNT</h3>
+            <h2>Search terms</h2>
+            <h2>Advanced search</h2>
+            <h2>Orders & Returns</h2>
+            <h2>Helps & FAQ</h2>
+            <h2>Store Locations</h2>
+        </div>
+        <div class="footer-col">
+            <h3>INFORMATION</h3>
+            <h2>News</h2>
+            <h2>FAQ</h2>
+            <h2>Refunds & Returns</h2>
+            <h2>Delivery</h2>
+            <h2>Privacy Policy &</h2>
+            <h2>Terms & Conditions</h2>
+        </div>
+        <div class="footer-col">
+            <h3>Services</h3>
+             <h2>Rock climbing Gears</h2>
+             <h2>Solar Powered helmet</h2>
+             <h2>pull Rope Rubber</h2>
+             <h2>Pairing knife</h2>
+             <h2>Ladder Golf</h2>
+        </div>
+
+    </div>
+    <div class="thin-border"></div>
+    <div id="footer-bottom">
+        <h3>FOLLOW US ON</h3>
+        <div style="transform: scale(1.7) ;" class="footer-image"><img src="images/facebook.png" alt=""></div>
+        <div class="footer-image"><img src="images/instagram.png" alt=""></div>
+        <div class="footer-image"><img src="images/twitter.png" alt=""></div>
+    </div>
+  </footer>
+
+ <script src="./location.js"></script>
+</body>
+</html>

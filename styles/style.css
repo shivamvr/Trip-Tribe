@@ -304,9 +304,9 @@ nav > div {
   -webkit-backdrop-filter: blur(10px);
   padding-left: 8rem;
 }
-#guides > div {
-  /* border: solid; */
-}
+/*#guides > div {
+   border: solid; 
+}*/
 .guide-card {
   width: 320px;
   display: flex;
@@ -965,9 +965,9 @@ footer {
     margin-left: 1rem;
     align-self: flex-start;
   }
-  #search {
+  /* #search {
     
-  }
+  } */
  
 
   nav > div {
