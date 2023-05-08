@@ -196,6 +196,8 @@ function appending(ls_data) {
       }, 3000);
     } else {
       window.location = '/payment.html'
+      localStorage.setItem('price',ls_data.price)
+      localStorage.setItem('duration',ls_data.Duration)
     }
   });
   p1.textContent='Free cancellation';

@@ -64,20 +64,17 @@ function showMethod(box,method){
    //Summary total ----------------------->
    
    function summary_amount() {
-       let cart = JSON.parse(localStorage.getItem("cart"))||[]
-       let sum = 0
-       for(let i=0;i<cart.length;i++){
-        sum+=cart[i].price*cart[i].quantity
-       }
+       let price = JSON.parse(localStorage.getItem("price")) || ' '
+       let durationls = JSON.parse(localStorage.getItem("duration")) || ' '
        let data = JSON.parse(localStorage.getItem('total'));
        let bg = document.getElementById('summary-bag-total');
-       let del = document.getElementById('summary-delivery');
+       let duration = document.getElementById('summary-delivery');
        let total = document.getElementById('summary-total');
        let amount = document.getElementById('amount-payable');
        
-       total.innerHTML = `₹ ${sum}`;
-   
-       amount.innerHTML = `₹ ${sum}`;
+       duration.innerText = durationls
+       total.innerHTML = `₹ ${price}`;
+       amount.innerHTML = `₹ ${price}`;
    }
    
    summary_amount();
