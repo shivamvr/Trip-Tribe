@@ -33,6 +33,10 @@ nav {
   justify-content: center;
   cursor: pointer;
 }
+#logo>span{
+  font-size: 22px;
+  transform: translate(2px,-2px);
+}
 nav > div {
   display: flex;
   margin: 0 10px;
@@ -72,7 +76,7 @@ nav > div {
   padding-bottom: 10px;
   box-sizing: border-box;
   position: absolute;
-  top: 46px;
+  top: 44px;
   right: -80px;
   width: 500px;
   background: #333;
