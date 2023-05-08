@@ -275,5 +275,5 @@ async function updateData(obj){
         body:JSON.stringify(obj)
     })
      console.log(res)
-    // setTimeout(location.reload(),2)
+    setTimeout(location.reload(),2)
 }

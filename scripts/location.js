@@ -351,8 +351,13 @@ let filterData = locationData.filter((e)=>{
     showData(filterData)
 }
 
-// fetchData()
-
+function showDataBorder(item){
+    let fatBorders =  document.querySelectorAll('.fat-border')
+     fatBorders.forEach((e)=>{
+       e.style.display = 'none'
+     })
+     item.querySelector('.fat-border').style.display = 'block'
+}
 
 
 

@@ -148,7 +148,6 @@ nav > div {
   right: -25px;
   display: none;
   padding: 1rem 1rem;
-  padding-right: 5rem;
   padding-bottom: 0;
   background: #ffffff39;
   border-radius: 0 0 1rem 1rem;
@@ -161,7 +160,8 @@ nav > div {
 }
 
 .menu-wrapper > div {
-  min-width: 80px;
+  min-width: 120px;
+  width: fit-content;
   cursor: pointer;
   margin-bottom: 1.5rem;
   color: #333;

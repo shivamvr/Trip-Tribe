@@ -10,13 +10,18 @@ let menuSignUp = document.getElementById('menu-sign-up')
 let profile = document.getElementById('profile')
 let username = document.querySelector('#profile > div > div:nth-child(1)')
 let signOutBtn = document.querySelector('#profile > div > div:nth-child(2)')
-
+let mobileViewSinUp = document.getElementById('menu-sign-up')
+let mobileViewSinOut = document.getElementById('menu-sign-out')
+console.log(mobileViewSinOut)
 if(userStatus && userStatus.login){
  signUp.style.display = 'none'
+ mobileViewSinUp.style.display = 'none'
  profile.style.display = 'block'
+ mobileViewSinOut.style.display = 'block'
  username.innerHTML = user.name
 }else{
  profile.style.display = 'none'
+ mobileViewSinOut.style.display = 'none'
 }
 
 //--------------Sign-up--------------
@@ -44,9 +49,18 @@ function goToPage(page){
     window.location = `/${page}.html`
 }
 
+function showDataBorder(item){
+ let fatBorders =  document.querySelectorAll('.fat-border')
+  fatBorders.forEach((e)=>{
+    e.style.display = 'none'
+  })
+  item.querySelector('.fat-border').style.display = 'block'
+}
+
 about.onclick = () => {
     window.scrollTo(0, 3850);
 }
+
 
 //-----------------Event-handlers-------
 
@@ -83,12 +97,14 @@ body.onclick = ()=>{
     searchSection.style.display = 'none'
 }
 
-
-signOutBtn.onclick = ()=>{
- localStorage.setItem('user',null)
- localStorage.setItem('status',null)
- window.location.reload()
+function signOut(){
+    localStorage.setItem('user',null)
+    localStorage.setItem('status',null)
+    window.location.reload()
 }
+signOutBtn.onclick = signOut
+
+mobileViewSinOut.onclick = signOut
 
 
 function goToDetail(id){
