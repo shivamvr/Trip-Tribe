@@ -185,6 +185,9 @@
   }
   
   #home > .fat-border {
+    display: none !important;
+  }
+  #locations > .fat-border {
     display: block;
   }
   
@@ -271,7 +274,7 @@
     display: flex;
     /* align-self: flex-end; */
     border-top: solid 0.2px #eeeeee62;
-    margin-top: 10rem;
+    margin-top: 0rem;
     font-size: 12px;
     letter-spacing: .5px;
     /* background: #33333393; */
@@ -339,8 +342,9 @@
   #locationsearch{
     margin: auto;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 6rem;
     display: grid;
+    padding: 0 1rem;
     grid-template-columns: repeat(4, 1fr);
   }
   .loca{
@@ -359,18 +363,32 @@
     width: 89%;
   }
 
-  input,  #searchall {
+  input,  #searchall,#package,#duration {
     padding:10px;
-    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
     border-radius: 5px !important;
     border: 1px white;
     margin: 10px;
-
+    outline: none;
   }
-
+  .loca{
+    color: #fff;
+  }
+  #locationdetail{
+    display: grid;
+    grid-template-columns: repeat(3,280px);
+    grid-gap: 3rem;
+    padding: 0 2rem;
+    margin: 3rem;
+    justify-content: center;
+  }
+  .card-image{
+    height: 180px !important;
+  }
+  #locationdetail>div img{
+  }
   footer {
     padding-top: 1.8rem;
     background: #3ea8ff;
@@ -486,3 +504,27 @@
     width: 100%;
     cursor: pointer;
   }
+
+  
+@media only screen and (max-width: 1010px) {
+  #locationdetail{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 3rem;
+    padding: 0 2rem;
+    margin: 3rem;
+  }
+  #locationsearch{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media only screen and (max-width: 800px) {
+  #locationdetail{
+    display: grid;
+    grid-template-columns: repeat(1,300px);
+    justify-content: center;
+    grid-gap: 3rem;
+    padding: 0 2rem;
+    margin: 3rem;
+  }
+}

@@ -6,6 +6,7 @@ let userStatus = localStorage.getItem('status')
  let user = localStorage.getItem('status') 
  user = JSON.parse(user)
 let signUp = document.getElementById('sign-up')
+let menuSignUp = document.getElementById('menu-sign-up')
 let profile = document.getElementById('profile')
 let username = document.querySelector('#profile > div > div:nth-child(1)')
 let signOutBtn = document.querySelector('#profile > div > div:nth-child(2)')
@@ -22,6 +23,9 @@ if(userStatus && userStatus.login){
 signUp.onclick = ()=>{
   window.location = '/signup.html'
 }
+menuSignUp.onclick = ()=>{
+  window.location = '/signup.html'
+}
 
 // ---------------Page-redirection-------
 
@@ -33,14 +37,13 @@ let support = document.getElementById('support')
 let menu = document.getElementById('menu')
 let menuIcon = document.getElementById('menu-icon')
 let profileWrapper = document.querySelectorAll('.menu-wrapper')[1]
-// console.log(profileWrapper)
 let menuWrapper = document.querySelector('.menu-wrapper')
-// console.log(menuWrapper)
 let body = document.body
 
-locations.onclick = () => {
-    window.location = '/locations.html'
+function goToPage(page){
+    window.location = `/${page}.html`
 }
+
 about.onclick = () => {
     window.scrollTo(0, 3850);
 }
@@ -200,7 +203,6 @@ searchInput.onkeyup = () =>{
     }
 ]
  let term = searchInput.value.toLowerCase()
- console.log(term)
  let searchResults = data.filter((e)=>{
     let lowerCaseLocation = e.location.toLowerCase()
     let lowerCaseCountry = e.country.toLowerCase()
@@ -208,7 +210,6 @@ searchInput.onkeyup = () =>{
         return e
     }
  })
- console.log(searchResults)
  mapSearchResult(searchResults)
 }
 
@@ -233,7 +234,6 @@ function mapSearchResult(data){
 // --------------------Timer-Functionality---------------
 
 var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
-console.log(countDownDate)
 
 // Update the count down every 1 second
 var x = setInterval(function() {

@@ -33,13 +33,11 @@ let support = document.getElementById('support')
 let menu = document.getElementById('menu')
 let menuIcon = document.getElementById('menu-icon')
 let profileWrapper = document.querySelectorAll('.menu-wrapper')[1]
-// console.log(profileWrapper)
 let menuWrapper = document.querySelector('.menu-wrapper')
-// console.log(menuWrapper)
 let body = document.body
 
-locations.onclick = () => {
-    window.location = '/locations.html'
+function goToPage(page){
+    window.location = `/${page}.html`
 }
 about.onclick = () => {
     window.scrollTo(0, 3850);
@@ -200,7 +198,6 @@ searchInput.onkeyup = () =>{
     }
 ]
  let term = searchInput.value.toLowerCase()
- console.log(term)
  let searchResults = data.filter((e)=>{
     let lowerCaseLocation = e.location.toLowerCase()
     let lowerCaseCountry = e.country.toLowerCase()
@@ -208,7 +205,6 @@ searchInput.onkeyup = () =>{
         return e
     }
  })
- console.log(searchResults)
  mapSearchResult(searchResults)
 }
 
@@ -232,9 +228,7 @@ function mapSearchResult(data){
 
 
 
-// div with location details
 
-let locationdet = document.getElementById("locationdetail");
 
 let maindiv = document.createElement("div");
 maindiv.setAttribute("class", "locdetail");
@@ -264,7 +258,100 @@ button.addEventListener("click",()=>{
     window.location.href = "./payment.html";
 })
 
+let container = document.getElementById('locationdetail')
 
+let url = `https://rotten-writing-6104-data.onrender.com/places/`
+
+let locationData = []
+
+async function fetchData(url) {
+      let res = await fetch(url);
+      let data = await res.json();
+      locationData = data
+      showData(data)
+}
+
+fetchData(url)
+
+function showData(data){
+    container.innerHTML = ''
+    data.forEach((e)=>{
+    let element = `
+    <div class="place-card"  onclick="goToDetail(${e.id})">
+    <div class="card-image">
+        <img src="${e.image[0]}" alt="">              
+    </div>
+    <div class="card-details">
+        <div>
+            <p>${e.country}</p>
+            <p>${e.rating} <span class="rating">★★★★☆</span></p>              
+        </div>
+        <div>
+            <p>${e.location}</p>              
+            <p>${e.Duration}</p>              
+        </div>             
+    </div>
+  </div>
+    `
+  container.innerHTML += element
+    })
+}
+
+// -----------------------Search-functionality-----------
+
+let searchDestination = document.getElementById('des')
+let searchbtn = document.getElementById('searchall')
+
+searchbtn.onclick = ()=>{
+    let term = searchDestination.value.toLowerCase()
+    let searchResults = locationData.filter((e)=>{
+       let lowerCaseLocation = e.location.toLowerCase()
+       let lowerCaseCountry = e.country.toLowerCase()
+       if(term.length>=3 &&( lowerCaseLocation.includes(term) || lowerCaseCountry.includes(term)) ){
+           return e
+       }
+    })
+    showData(searchResults)
+}
+
+// -------------------------Filter-functionality-------------
+
+
+let package =  document.getElementById('package')
+
+package.onchange = ()=>{
+ if(package.value=='') {
+    showData(locationData)
+    return
+}
+
+ let filterData = locationData.filter((e)=>{
+    if(e.package==package.value){
+        return e
+    }
+ })
+ showData(filterData)
+}
+
+let duration = document.getElementById('duration')
+duration.onchange = ()=>{
+    if(duration.value=='') {
+       showData(locationData)
+       return
+   }
+   
+let filterData = locationData.filter((e)=>{
+       if(e.Duration!=undefined){
+           let n = e.Duration.split(' ')[3]
+           if(n==duration.value){
+               return e
+           }
+       }
+    })
+    showData(filterData)
+}
+
+// fetchData()
 
 
 
