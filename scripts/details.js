@@ -54,6 +54,8 @@ async function api_coll() {
     let res = await fetch(url);
     let details = await res.json();
     container = details;
+    localStorage.setItem('price',details.price)
+    localStorage.setItem('duration',details.Duration)
     appending(details);
 }
 
@@ -196,8 +198,7 @@ function appending(ls_data) {
       }, 3000);
     } else {
       window.location = '/payment.html'
-      localStorage.setItem('price',ls_data.price)
-      localStorage.setItem('duration',ls_data.Duration)
+     
     }
   });
   p1.textContent='Free cancellation';

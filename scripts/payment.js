@@ -64,8 +64,8 @@ function showMethod(box,method){
    //Summary total ----------------------->
    
    function summary_amount() {
-       let price = JSON.parse(localStorage.getItem("price")) || ' '
-       let durationls = JSON.parse(localStorage.getItem("duration")) || ' '
+       let price = localStorage.getItem("price") || ' '
+       let durationls = localStorage.getItem("duration") || ' '
        let data = JSON.parse(localStorage.getItem('total'));
        let bg = document.getElementById('summary-bag-total');
        let duration = document.getElementById('summary-delivery');
