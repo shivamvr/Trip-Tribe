@@ -19,7 +19,7 @@ It is collaborative project, We are team of three members.We have worked for 5 d
 
 ******************************************************************************************
 
-# Features 
+# Features (User Side)
 + Authentication
 + Signin/Signup Functionality
 + Search functionality
@@ -30,3 +30,12 @@ It is collaborative project, We are team of three members.We have worked for 5 d
 + Payment functionality
 + Responsive slideshow
 
+********************************************************************************************
+
+# Features (Admin Side)
+
++ Add location
++ Remove location
++ See all register users
++ Remove Register user
++ See all Employees 
