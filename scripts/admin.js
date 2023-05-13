@@ -240,12 +240,12 @@ document.querySelector("#addIphone").addEventListener("click",(e)=>{
     e.preventDefault()
     document.querySelector("#item").innerText="";
     form.innerHTML=""
-    form.innerHTML=`<input type="url" id="image" placeholder="Image URL">
-        <input type="text" id="location" placeholder="Location">
-        <input type="text" id="country" placeholder="Country">
-        <input type="number" name="price" id="price" placeholder="Price">
-        <input type="text" name="duration" id="duration" placeholder="Duration">
-        <input type="text" id="package" placeholder="Package">
+    form.innerHTML=`<input type="url" id="image" placeholder="Image URL" value="https://cf.bstatic.com/xdata/images/city/600x600/684822.jpg?k=8e3dfdbe7474b16f993bead046bb1d3d329cdd68c6aee6ec72c8e935ba426a9f&o=">
+        <input type="text" id="location" placeholder="Location" value="Pune">
+        <input type="text" id="country" placeholder="Country" value="India">
+        <input type="number" name="price" id="price" placeholder="Price" value="48900">
+        <input type="text" name="duration" id="duration" placeholder="Duration" value="4 days and 5 nights">
+        <input type="text" id="package" placeholder="Package" value="Adventure Package">
         `
         let button=document.createElement("button")
         button.innerText="Add"
@@ -258,6 +258,9 @@ document.querySelector("#addIphone").addEventListener("click",(e)=>{
                 Duration: form.duration.value,
                 price:form.price.value,
                 package:form.package.value,
+                rating: 4.1,
+                review: 254
+
             }
             console.log(obj)
             updateData(obj)
