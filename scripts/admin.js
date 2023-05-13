@@ -3,7 +3,7 @@ let container = document.querySelector("#container")
 async function fetchData(data = "products") {
     if (data == "products") {
         try {
-            let res = await fetch(`https://rotten-writing-6104-data.onrender.com/places/`)
+            let res = await fetch(`https://645f3bf99d35038e2d1f5356.mockapi.io/locations`)
             res = await res.json();
             displayProduct(res);
         }
@@ -86,7 +86,7 @@ function displayProduct(arr) {
         button.addEventListener("click", () => {
             async function DeleteProducts() {
                 try {
-                    let res = await fetch(`https://rotten-writing-6104-data.onrender.com/places/${arr[i].id}`, {
+                    let res = await fetch(`https://645f3bf99d35038e2d1f5356.mockapi.io/locations/${arr[i].id}`, {
                         method: 'DELETE',
                         headers: {
                             'Content-Type': 'application/json'
@@ -270,7 +270,7 @@ document.querySelector("#addIphone").addEventListener("click",(e)=>{
 
 
 async function updateData(obj){
-    let res =await fetch("https://rotten-writing-6104-data.onrender.com/places",{
+    let res =await fetch("https://645f3bf99d35038e2d1f5356.mockapi.io/locations",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

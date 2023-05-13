@@ -39,3 +39,7 @@ It is collaborative project, We are team of three members.We have worked for 5 d
 + See all register users
 + Remove Register user
 + See all Employees 
+
+*********************************************************************************************
+Deployed link:-
+#  (https://triptribe.netlify.app/)

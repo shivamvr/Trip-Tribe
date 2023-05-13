@@ -50,13 +50,19 @@ window.addEventListener("load", () => {
 
 async function api_coll() {
   let id = localStorage.getItem('location')
-  let url = `https://rotten-writing-6104-data.onrender.com/places/${id}`;
+  let url = `https://645f3bf99d35038e2d1f5356.mockapi.io/locations/?id=${id}`;
+    console.log(url)
     let res = await fetch(url);
     let details = await res.json();
-    container = details;
+    if(details.length>=1){
+      container = details[0]
+    }else{
+      container = details
+    }
+    
     localStorage.setItem('price',details.price)
     localStorage.setItem('duration',details.Duration)
-    appending(details);
+    appending(container);
 }
 
 function appending(ls_data) {

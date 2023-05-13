@@ -260,7 +260,7 @@ button.addEventListener("click",()=>{
 
 let container = document.getElementById('locationdetail')
 
-let url = `https://rotten-writing-6104-data.onrender.com/places/`
+let url = `https://645f3bf99d35038e2d1f5356.mockapi.io/locations`
 
 let locationData = []
 
