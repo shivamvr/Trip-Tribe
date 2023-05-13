@@ -56,6 +56,7 @@ async function api_coll() {
     let details = await res.json();
     if(details.length>=1){
       container = details[0]
+      details = details[0]
     }else{
       container = details
     }
