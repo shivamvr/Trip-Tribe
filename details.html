@@ -10,11 +10,47 @@
         href="./images/map.png"
         type="image/x-icon">
     <link rel="stylesheet" href="styles/details.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <script src="https://kit.fontawesome.com/7f65b73c69.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
+        <!------------------Navbar---------------->
+  <nav style="background: #3ea8ff96; top: 0;">
+    <div id="logo" onclick="goToPage('index')" >
+        <p style="animation: none;">Tr</p>ip tribe
+        <img src="" alt="">
+    </div>
+    <div id="nav-items">
+        <div id="home" onclick="goToPage('index')">
+            Home
+            <div class="fat-border"></div>
+        </div>
+        <div onclick="showDataBorder(this)" id="discover">
+            Discover
+            <div class="fat-border"></div>
+        </div>
+        <div id="locations" onclick="goToPage('location')" >
+            Locations
+            <div class="fat-border"></div>
+        </div>
+        <div id="about">
+            About Us
+            <div class="fat-border"></div>
+        </div>
+        <div onclick="showDataBorder(this)" id="support">
+            Support
+            <div class="fat-border"></div>
+        </div>
+     <div>
+        
+     </div>
+       
+        
+    </div>
+    <div class="thin-border"></div>
+  </nav>
 
     <main id="main">
         <!-- data append here -->
@@ -107,5 +143,6 @@
 </body>
 
 <script src="scripts/details.js"></script>
+<script src="scripts/index.js"></script>
 
 </html>
