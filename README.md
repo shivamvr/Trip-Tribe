@@ -1,6 +1,6 @@
 
 Deployed link:-
-# rotten-writing-6104 (https://triptribe.netlify.app/)
+# rotten-writing-6104 Url: (https://triptribe.netlify.app/)
 
 It is collaborative project, We are team of three members.We have worked for 5 days.The names are as follows:-
 
