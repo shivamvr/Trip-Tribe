@@ -11,7 +11,7 @@ It is a collaborative project, We are a team of three members. We worked for 5 d
 3. Sk Alijan(fp09_025)
 
 
-Project Description: Trip Tribe - Travel Package Booking Website
+## Trip Tribe - Travel Package Booking Website
 Overview
 Trip Tribe is an innovative and user-friendly travel package booking website that aims to make trip planning a delightful experience for travelers. This platform provides a wide range of curated travel packages for various destinations, offering a seamless booking process and personalized travel experiences. With a beautiful and intuitive interface, Trip Tribe caters to the wanderlust of users and helps them explore the world with ease.
 
