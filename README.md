@@ -1,15 +1,13 @@
+# rotten-writing-6104 
 
-Deployed link:-
-# rotten-writing-6104 Url: (https://triptribe.netlify.app/)
-
-# Trip Tribe
+# Trip Tribe (https://triptribe.netlify.app/)
 
 It is a collaborative project, We are a team of three members. We worked for 5 days. The names are as follows:-
 ```
 
-1. Shivam Verma(fw25_222)
-2. Aditya Choudhary(fw24_753)
-3. Sk Alijan(fp09_025)
+1. [Shivam Verma(fw25_222)](https://github.com/shivamvr)
+2. [Aditya Choudhary(fw24_753)](https://github.com/Aditya-Choudhary0)
+3. [Sk Alijan(fp09_025)](https://github.com/SK-ALIJAN)
 
 ```
 
