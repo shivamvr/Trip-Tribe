@@ -10,11 +10,11 @@ It is a collaborative project, We are a team of three members. We worked for 5 d
 
 ##Tech Stack
 
-**HTML**: Used for structuring the website's content and layout.
-**CSS**: Employed for styling the website and ensuring an attractive user interface.
-**JavaScript**: Implemented to add interactivity and dynamic functionalities to the website.
-**LocalStorage**: Utilized for session persistence, enabling a smooth user experience during the booking process.
-**Mock API**: Integrated to simulate interactions with external services, showcasing real-world application scenarios.
+- **HTML**: Used for structuring the website's content and layout.
++  **CSS**: Employed for styling the website and ensuring an attractive user interface.
+* **JavaScript**: Implemented to add interactivity and dynamic functionalities to the website.
+- **LocalStorage**: Utilized for session persistence, enabling a smooth user experience during the booking process.
++ **Mock API**: Integrated to simulate interactions with external services, showcasing real-world application scenarios.
 
 ## Trip Tribe - Travel Package Booking Website
 
