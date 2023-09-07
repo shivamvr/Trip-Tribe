@@ -8,7 +8,7 @@ It is a collaborative project, We are a team of three members. We worked for 5 d
 2. [Aditya Choudhary(fw24_753)](https://github.com/Aditya-Choudhary0)
 3. [Sk Alijan(fp09_025)](https://github.com/SK-ALIJAN)
 
-##Tech Stack
+## Tech Stack
 
 - **HTML**: Used for structuring the website's content and layout.
 +  **CSS**: Employed for styling the website and ensuring an attractive user interface.
