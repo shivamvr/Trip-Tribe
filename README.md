@@ -21,7 +21,7 @@ It is a collaborative project, We are a team of three members. We worked for 5 d
 **Overview**
 Trip Tribe is an innovative and user-friendly travel package booking website that aims to make trip planning a delightful experience for travelers. This platform provides a wide range of curated travel packages for various destinations, offering a seamless booking process and personalized travel experiences. With a beautiful and intuitive interface, Trip Tribe caters to the wanderlust of users and helps them explore the world with ease.
 
-#Features
+# Features
 
 ## 1. User Registration and Authentication
 Users can create accounts or log in to Trip Tribe using their email or social media accounts. This feature enables a personalized experience and allows users to manage their bookings and preferences effectively.
