@@ -5,9 +5,9 @@
 It is a collaborative project, We are a team of four members. We worked for 5 days. The names are as follows:-
 
 1. [Shivam Verma(fw25_222)](https://github.com/shivamvr)
-2. [Omkar Kasar(fw25_193](https://github.com/omkasar98)
+2. [Sk Alijan(fp09_025)](https://github.com/SK-ALIJAN)
 3. [Aditya Choudhary(fw24_753)](https://github.com/Aditya-Choudhary0)
-4. [Sk Alijan(fp09_025)](https://github.com/SK-ALIJAN)
+
 
 ## Tech Stack
 
